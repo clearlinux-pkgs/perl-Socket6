@@ -4,7 +4,7 @@
 #
 Name     : perl-Socket6
 Version  : 0.28
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/U/UM/UMEMOTO/Socket6-0.28.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/U/UM/UMEMOTO/Socket6-0.28.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libi/libio-socket-inet6-perl/libio-socket-inet6-perl_2.72-2.debian.tar.xz
