@@ -1,0 +1,7 @@
+Configure miss: cc option to accept ISO C89
+Configure miss: getipnodebyname
+Configure miss: getipnodebyname in -lsocket
+Configure miss: whether your system has IPv6 directory
+Configure miss: getipnodebyaddr
+Configure miss: getipnodebyaddr in -lsocket
+Configure miss: whether you have sa_len in struct sockaddr
