@@ -1,170 +1,445 @@
-libio-socket-inet6-perl (2.72-2) unstable; urgency=medium
+2018-09-30  Hajimu UMEMOTO  <ume@mahoroba.org>
 
-  * Team upload
-  * Update Vcs-Browser URL to cgit web frontend
-  * Reformat debian/control with cme
-  * Declare the package autopkgtestable
-  * Declare compliance with Debian policy 3.9.6
-  * Add explicit Build-Depends on libmodule-build-perl
+	* Socket6.pm: Bump version number to 0.29.
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Sat, 06 Jun 2015 12:37:28 +0200
+	* Socket6.xs: Updates the tests for handling the correct headers
+	on NetBSD and DragonFly BSD.
 
-libio-socket-inet6-perl (2.72-1) unstable; urgency=medium
+	Submitted by:	Sevan Janiyan <venture37 [...] geeklan.co.uk>
 
-  [ gregor herrmann ]
-  * Remove Masahito Omote from the Uploaders field as per request of the
-    MIA team. Thanks to Ana Guerrero Lopez for the bug report.
-    (Closes: #738886)
+2016-07-11  Hajimu UMEMOTO  <ume@mahoroba.org>
 
-  [ Daniel Lintott ]
-  * Imported Upstream version 2.72
-  * Add myself to uploaders
+	* Socket6.pm: Bump version number to 0.28.
 
- -- Daniel Lintott <daniel@serverb.co.uk>  Sat, 22 Mar 2014 16:22:10 +0000
+	* aclocal.m4 (IPv6_CHECK_INET_NTOP): inet_ntop(3) may returns
+	IPv4-compatible IPv6 address. [cpan #113950]
 
-libio-socket-inet6-perl (2.71-1) unstable; urgency=low
+	Submitted by:	Andrew Galante <spock128 [...] gmail.com>
 
-  * Team upload
+2016-03-23  Hajimu UMEMOTO  <ume@mahoroba.org>
 
-  [ Salvatore Bonaccorso ]
-  * Change Vcs-Git to canonical URI (git://anonscm.debian.org)
-  * Change search.cpan.org based URIs to metacpan.org based URIs
+	* Socket6.pm: Bump version number to 0.27.
 
-  [ Axel Beckert ]
-  * debian/copyright: migrate pre-1.0 format to 1.0 using "cme fix dpkg-
-    copyright"
+2016-03-22  Hajimu UMEMOTO  <ume@mahoroba.org>
 
-  [ Damyan Ivanov ]
-  * Imported Upstream version 2.71
-  * drop spelling.patch, applied upstream
-  * drop trailing slash from metacpan URLs
-  * claim conformance with Policy 3.9.5
+	* t/use.t: We still supports an environment where AF_INET6 is not
+	defined.
 
- -- Damyan Ivanov <dmn@debian.org>  Sat, 09 Nov 2013 21:24:57 +0200
+2016-03-17  Hajimu UMEMOTO  <ume@mahoroba.org>
 
-libio-socket-inet6-perl (2.69-2) unstable; urgency=low
+	* Socket6.pm: Bump version number to 0.26.
 
-  [ Fabrizio Regalli ]
-  * Replaced changelog with copyright word in d/changelog
+	* Makefile.PL: Make Socket6 buildable on Android. [cpan #98181]
 
-  [ gregor herrmann ]
-  * Add build dependency on netbase (debian/control) and check if
-    localhost exists before running tests (debian/rules). Thanks to Daniel
-    Schepler for the bug report. (Closes: #651537)
-  * Remove versions from (build) dependencies, nothing older in the
-    archive.
-  * Lowercase short description.
-  * Switch to debhelper compatibility level 8.
-  * Add /me to Uploaders.
-  * Add libtest-pod-coverage-perl to Build-Depends-Indep.
-  * Add a patch to fix a spelling mistake.
+	Submitted by:	fraserbn [...] gmail.com
 
- -- gregor herrmann <gregoa@debian.org>  Fri, 09 Dec 2011 20:52:49 +0100
+	* system inet_ntop broken in darwin. [cpan #113005]
 
-libio-socket-inet6-perl (2.69-1) unstable; urgency=low
+	Submitted by:	RURBAN [...] cpan.org
 
-  * New upstream release (Closes: #650249)
-  * Adopting package by Debian Perl Group, with Masahito Omote also in
-    Uploaders.
-  * debian/copyright: updated to DEP5
-  * debian/control: added Vcs-Git, Vcs-Browser, and Homepage.
+2015-12-05  Hajimu UMEMOTO  <ume@mahoroba.org>
 
- -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Mon, 28 Nov 2011 11:21:00 -0500
+	* gailookup.pl.in: Add -r option to do reverse lookup.
 
-libio-socket-inet6-perl (2.67-0.1) unstable; urgency=low
+2015-11-25  Hajimu UMEMOTO  <ume@mahoroba.org>
 
-  * Non-maintainer upload
-  * New upstream release (Closes: #648939)
-  * minimize debian/rules
-  * bump Standards-Version to 3.9.2 (no changes needed)
+	* gailookup.pl.in: Add awareness of AI_ALL and AI_V4MAPPED.
 
- -- Daniel Kahn Gillmor <dkg@fifthhorseman.net>  Mon, 28 Nov 2011 00:20:12 -0500
+	* gailookup.pl.in: Add -P option to ease to specify port number.
 
-libio-socket-inet6-perl (2.65-1.1) unstable; urgency=high
+2013-12-09  Hajimu UMEMOTO  <ume@mahoroba.org>
 
-  * Non-maintainer upload.
-  * Revert changes to the dh_clean call in the install target: use dh_prep -k.
-  * Set urgency to high as requested by the release team.
+	* Socket6.pm: Bump version number to 0.25.
 
- -- Salvatore Bonaccorso <carnil@debian.org>  Sun, 16 Jan 2011 21:22:09 +0100
+	* Makefile.PL: Install manpage. [cpan #66811]
 
-libio-socket-inet6-perl (2.65-1) unstable; urgency=low
+	Submitted by:	gavin@openfusion.com.au
 
-  * New upstream release (closes: Bug#575531)
-  * Close #480500 that was already fixed in 2.54. (closes: Bug#480500)
-  * Standards-Version: 3.9.1
+	* Socket6.pm: Fix typo. [cpan #86346]
 
- -- Masahito Omote <omote@debian.org>  Sun, 12 Sep 2010 02:59:48 +0900
+	Submitted by:	dsteinbrunner@pobox.com
 
-libio-socket-inet6-perl (2.54-1.1) unstable; urgency=low
+	* Socket6.pm: Fix typo. [cpan #71617]
 
-  * Non-maintainer upload.
-  * Fix for error resolving addresses with AF_UNSPEC (closes: #522478).
+2013-12-08  Hajimu UMEMOTO  <ume@mahoroba.org>
 
- -- Sean Finney <seanius@debian.org>  Mon, 04 May 2009 15:09:36 +0200
+	* Socket6.pm: Bump version number to 0.24.
 
-libio-socket-inet6-perl (2.54-1) unstable; urgency=low
+	* Makefile.PL: Fixed [cpan #77665] pass perl cc and ccflags to
+	configure
 
-  * New upstream release (closes: Bug#479564)
-  * Bump Standards-Version to 3.7.3.0.
-  * debian/compat: set 7 and Depends: debhelper (>= 7).
+	Submitted by:	rurban@cpan.org
 
- -- Masahito Omote <omote@debian.org>  Mon, 12 May 2008 01:24:14 +0900
+	* Makefile.PL (configure_mswin32): Fixed [cpan #65710]
+	undefined ref to inet_ntop,inet_pton on Windows XP.
 
-libio-socket-inet6-perl (2.51-1) unstable; urgency=low
+	Submitted by:	APOCAL@cpan.org
 
-  * New upstream release
-  * Standards-Version: 3.6.1.1
-  * Close #238159, this bug was already fixed in 2.01-1. (closes: Bug#238159)
+	* t/use.t: Fixed [cpan #75211] test redefinition warnings
 
- -- Masahito Omote <omote@debian.org>  Sun, 12 Dec 2004 13:08:19 +0900
+	Submitted by:	Manoj Kumar <mkmetw@hotmail.com>
 
-libio-socket-inet6-perl (2.01-1) unstable; urgency=low
+2008-11-02  Hajimu UMEMOTO  <ume@mahoroba.org>
 
-  * New upstream release
-  * Standards-Version: 3.6.1.0
+	* Socket6.pm: Bump version number to 0.23.
 
- -- Masahito Omote <omote@debian.org>  Tue, 30 Mar 2004 03:05:45 +0900
+	* Makefile.PL (configure_mswin32): Added a conditional #define for
+	HAVE_INET_(PTON|NTOP) to make the module.
+	Change was necessary because the SDK for Vista now includes
+	inet_(pton|ntop) in ws2tcpip.h
 
-libio-socket-inet6-perl (2.00-1) unstable; urgency=low
+	Submitted by:	"David M. Town" <dtown@cpan.org>
 
-  * New upstream release
+	* Makefile.PL (configure_mswin32): Added a line to #define
+	HAVE_SOCKLEN_T since it is defined for MSWin32
 
- -- Masahito Omote <omote@debian.org>  Thu, 11 Dec 2003 16:24:41 +0900
+	Submitted by:	"David M. Town" <dtown@cpan.org>
 
-libio-socket-inet6-perl (1.28-2) unstable; urgency=low
+	* Socket6.pm: Added @EXPORT_OK to export AF_INET6 and PF_INET6 if
+	requested.  This allows the use of the Socke6 module without
+	having to perform the same conditional check that was added to
+	avoid conflicts with the Socket module default exports (i.e. use
+	Socket6 qw(AF_INET6 inet_pton inet_ntop); )
 
-  * Depends libsocket6-perl over 0.11.99.
-  * Standards-Version: 3.6.0.
+	Submitted by:	"David M. Town" <dtown@cpan.org>
 
- -- Masahito Omote <omote@debian.org>  Sun, 10 Aug 2003 21:28:22 +0900
+	* Socket6.pm (AUTOLOAD): Explicitly set $! = 0 before calling
+	constant().  This should not be required since errno was being set
+	to 0 in the C function, but Perl 5.10.0 Win32 Vista needed this to
+	be done or all constants reported unsupported.
 
-libio-socket-inet6-perl (1.28-1) unstable; urgency=low
+	Submitted by:	"David M. Town" <dtown@cpan.org>
 
-  * New upstream release (closes: Bug#204388)
-  * Depends libsocket6-perl over 0.11-7 because 1.28-1 need to support
-    getipnodeby{addr|byname}.
+2008-08-18  Hajimu UMEMOTO  <ume@mahoroba.org>
 
- -- Masahito Omote <omote@debian.org>  Sun, 10 Aug 2003 20:28:49 +0900
+	* Socket6.pm: Use strict environment.
 
-libio-socket-inet6-perl (1.27-1) unstable; urgency=low
+	* Socket6.pm: Bump version number to 0.22.
 
-  * New upstream release.
+	* Socket6.pm: Make AF_INET6 check actually work.
 
- -- Masahito Omote <omote@debian.org>  Tue, 24 Jun 2003 21:38:38 +0900
+	Submitted by:	Tatsuya Noda <topia@clovery.jp>
 
-libio-socket-inet6-perl (1.26-2) unstable; urgency=low
+	* Makefile.PL: Make sure to include config.pl in current
+	directory.
 
-  * I forgot to close ITP. (closes: Bug#196226)
-  * Fix speparation bug between address and port.
-  * Fix to use getaddrinfo instead of inet_pton to work properly.
-  * I have already sent these fixes to upstream.
+2008-08-17  Hajimu UMEMOTO  <ume@mahoroba.org>
 
- -- Masahito Omote <omote@debian.org>  Mon, 16 Jun 2003 20:03:11 +0900
+	* Socket6.pm: Bump version number to 0.21.
 
-libio-socket-inet6-perl (1.26-1) unstable; urgency=low
+	* Socket6.xs: Make it buildable on the following environment by
+	defining WINVER as 0x0501:
+		- Windows XP SP3
+		- ActivePerl-5.10.0.1003-MSWin32-x86-285500
+		- MinGW-5.1.4
+		- nmake 9.00.21022.08 (shipped with VisualStudio 2008 Express)
 
-  * Initial Release.
+	Submitted by:	"IWAMURO Motonori" <vmi@nifty.com>
 
- -- Masahito Omote <omote@debian.org>  Sun,  8 Jun 2003 16:35:25 +0900
+2008-02-16  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.20.
+
+	* Socket6.pm: Make the AF_INET6 and PF_INET6 exports optional.
+	They are exported from Socket on 5.10.0, and it contlicts with
+	Socket6.
+
+	PR:		http://rt.cpan.org/Public/Bug/Display.html?id=32362
+	Reported by:	"Shlomi Fish via RT" <bug-Socket6@rt.cpan.org>
+	Submitted by:	"KONDOU, Kazuhiro" <kazuhiro@alib.jp>
+
+2008-01-27  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.xs, Socket6.pm: Make getaddrinfo() return the string
+	error or the numeric value according to the context.
+	Make getnameinfo() return error value.
+	Export the EAI_* error constants.
+
+	Submitted by:	Paul LeoNerd Evans <leonerd@leonerd.org.uk>
+
+	* Socket6.xs: FreeBSD 7 and later don't have KAME IPsec anymore.
+
+	* Socket6.xs: gai_strerror() returns `const char *'.
+
+2005-08-28  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.19.
+
+	* Socket6.xs: the "sin6_scope_id" field of the "sockaddr_in6"
+	structure is expected to passed and is returned in host byte
+	order.
+
+	Submitted by:	"Town, David" <David.Town@marconi.com>
+
+2005-03-28  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.18.
+
+	* getaddrinfo.c (getaddrinfo): Support for AI_NUMERICSERV.
+
+	* aclocal.m4: use Autoconf 2.59.
+
+2004-07-14  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Fix documentation of the gethostbyname2.  The
+	gethostbyname2 function takes a FAMILY, not a SERVNAME.
+
+		Reported by:	Bernard Massot <bernard@massot.ath.cx>
+
+2004-03-24  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.17.
+
+	* Socket6.xs: Shut up signed/unsigned mismatch warning from
+	Microsoft C++.
+
+		Reported by:	"David Town" <dtown@cpan.org>
+
+	* Makefile.PL: CC is not a valid parameter for WriteMakefile().
+	Use CONFIGURE instead.
+
+		Submitted by:	"David Town" <dtown@cpan.org>
+
+	* Socket6.pm: Correct typos (inaddr6_* -> in6addr_*).
+
+		Submitted by:	"David Town" <dtown@cpan.org>
+
+2004-03-23  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Provide substitutes for systems the lack support for inet_ntop()
+	and inet_pton().
+
+		Submitted by:	"David Town" <dtown@cpan.org>
+
+	* Add support for MSWin32.  It was tested with the following
+	configuration:
+
+	  - ActivePerl 5.8.0 (805)
+	  - Windows 2000
+	  - Microsoft IPv6 Technology Preview for Windows 2000 (not needed
+	    for XP)
+	    (http://msdn.microsoft.com/downloads/sdks/platform/tpipv6.asp)
+	  - Microsoft Visual C++ v6.0
+	  - Microsoft Platform SDK February 2003 (must have at least
+	    August 2001)
+	    (http://www.microsoft.com/msdownload/platformsdk/sdkupdate/downlevel.htm)
+
+		Submitted by:	"David Town" <dtown@cpan.org>
+
+	* t/use.t: Pass an empty string as the SERVICENAME to
+	getaddrinfo().  MSWin32's getaddrinfo() doesn't like "0" as a
+	numeric servname.
+
+		Submitted by:	"David Town" <dtown@cpan.org>
+
+2004-02-21  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.16.
+
+	* aclocal.m4: inet_ntop and inet_pton are in libnsl on Solaris.
+
+	Submitted by:	Mike McCauley <mikem@open.com.au>
+
+2004-01-05  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.14.
+
+	* gailookup.pl.in: Though some systems has NI_WITHSCOPEID, RFC
+	2553 doesn't mention it, and RFC 3493 deprecated it.  So, make use
+	of NI_WITHSCOPEID optional.
+
+	* gailookup.pl.in: Add -S option which suppress scopeid.  RFC 3493
+	system always adds scopeid in a result of getnameinfo().
+
+	* Socket6.xs: Make pack_sockaddr_in6() and pack_sockaddr_in6_all()
+	actual work on systems which have sin6_len in struct sockaddr_in6.
+
+2004-01-04  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* aclocal.m4: getaddrinfo() is a macro on some systems.
+
+	* Socket6.pm: Bump version number to 0.13.
+
+	* getaddrinfo.c (getaddrinfo): EAI_NODATA was deprecated in RFC
+	3493.  return EAI_NONAME instead.
+
+	* getnameinfo.c (getnameinfo): add support for NI_NAMEREQD.
+
+2003-12-29  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* add simple test.
+
+2003-10-28  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Bump version number to 0.12.
+
+	* Socket6.pm: Mention that getipnodeby*() was deprecated in
+	RFC3493.
+
+2001-09-20  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* getaddrinfo.c (getaddrinfo): Correct AI_PASSIVE parsing bug.
+
+	Reported by:	Rob Siemborski <rjs3@andrew.cmu.edu>
+
+2001-09-18  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.11.
+
+	* getaddrinfo.c (getaddrinfo), gai.h: Add support of AI_NUMERICHOST.
+
+	* getnameinfo.c (getnameinfo): Use socklen_t rather than size_t.
+
+	* getnameinfo.c (getnameinfo): Fix buffer overflow problem.
+
+2001-09-17  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm, Socket6.xs, config.h.in, configure.in: Add glue
+	functions for getipnodeby*() and gai_strerror().
+
+	* Socket6.xs: inet_pton() should work as it is.
+
+	* Socket6.xs: Better documentation of inet_pton() and inet_ntop().
+
+	* Socket6.pm: Description was filled.
+
+	* Socket6.pm, Socket6.xs: Return an error message string if
+	getaddrinfo() fails.
+
+	Submitted by:   Jeff Okamoto <okamoto@best.com>
+
+2001-03-27  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.10.
+
+	* Socket6.xs: Make compilable under OpenBSD.  Though OpenBSD has
+	KAME, OpenBSD doesn't have netinet6/ipsec.h.
+	Reported by:	Tim Ayers <cpantest@quaday.com>
+
+2001-03-21  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.09.
+
+	* aclocal.m4 (IPv6_CHECK_FUNC): There is getaddrinfo(3) in
+	libsocket under Solaris8.
+	Reported by:	Tomohide Nagashima <tomohide@japan-telecom.co.jp>,
+			TAKANO Yuji <takachan@running-dog.net>
+
+2001-01-26  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm:
+		- Fix typo in sample code.
+		  Reported by:	Matsumura Naoki <mat@pfu.co.jp>
+		- Bump version number to 0.08.
+
+2000-05-28  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.07.
+
+	* getaddrinfo.c (getaddrinfo):
+		- Add support for AI_CANONNAME.
+		- Our fake version of getaddrinfo() only support IPv4.
+
+2000-05-27  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: More description.
+
+		Submitted by:	Jun-ichiro itojun Hagino <itojun@iijlab.net>
+
+	* Socket6.xs (inet_ntop): Make inet_ntop() work with AF_INET.
+
+		Submitted by:	Jun-ichiro itojun Hagino <itojun@iijlab.net>
+
+2000-05-01  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* gailookup.pl.in: Add -c and -s option.
+
+2000-04-15  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Makefile.PL: Cosmetic.
+
+2000-04-12  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* aclocal.m4: IPv6 related macros were improved.
+
+	* configure.in: Use new macros.
+
+2000-03-23  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* getaddrinfo.c (gai_strerror): Add message for EAI_SERVICE.
+
+2000-03-20  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.06.
+
+	* config.pl.in: config.pl did not return a true value at
+	Makefile.PL line 41.
+
+		Reported by:	Paul Schinder <schinder@pobox.com>
+
+	* config.pl.in: Don't use @PERLPATH@ and @CFLAGS@ values returns
+	from configure.
+
+2000-03-18  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.05.
+
+	* Makefile.in: Provide a Makefile.PL that runs configure, so that
+	things can be done in the usual Perl way.
+
+		Pointed out by: Paul Schinder <schinder@pobox.com>
+
+2000-03-17  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6.pm: Bump version number to 0.04.  I changed convention
+	of version number to n.nn.
+
+2000-03-16  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* acconfig.h: Define HAVE_PL_SV_UNDEF rather than use of CFLAGS.
+
+	* Makefile.in: Added.  Now, ExtUtils::MakeMaker generates
+	Makefile.go.
+
+2000-03-14  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* configure.in: Use gcc if available.  Cannot compile with
+	traditional cc on some Linuxes due to illegal `const' definition:
+
+	        Debian GNU/Linux 2.1 (slink)  : glibc-2.0.7
+		Debian GNU/Linux 2.2 (potato) : glibc-2.1.3
+
+		Submitted by: Hideaki YOSHIFUJI <yoshfuji@ecei.tohoku.ac.jp>
+
+	* gailookup.pl.in: Added.  Rule for finding Perl and --with-perl
+	option was also added to configure.in.
+
+		Submitted by: Hideaki YOSHIFUJI <yoshfuji@ecei.tohoku.ac.jp>
+
+	* Socket6.xs: Add missing AI_NUMERICHOST.
+
+	* Makefile.PL.in: Pass CFLAGS to C compiler.
+
+	* configure.in: Separate functional blocks into aclocal.m4.
+
+2000-03-10  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6-0.3 is out.
+
+	* getaddrinfo.c (getaddrinfo): Avoid core dump when protocol is
+	not found in /etc/protocols or service is not found in
+	/etc/services.
+
+	* configure.in: Add check rule for PL_sv_undef.  Somewhat old
+	version of Perl5 uses sv_undef.
+
+	* configure.in: Add check rules for sa_len and sin6_scope_id.
+		Submitted by: Hideaki YOSHIFUJI <yoshfuji@ecei.tohoku.ac.jp>
+
+	* acconfig.h: Added to be able to use autoheader.
+		Submitted by: Hideaki YOSHIFUJI <yoshfuji@ecei.tohoku.ac.jp>
+
+2000-03-09  Hajimu UMEMOTO  <ume@mahoroba.org>
+
+	* Socket6-0.2 was released for evaluate.
 
