@@ -4,7 +4,7 @@
 #
 Name     : perl-Socket6
 Version  : 0.29
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/U/UM/UMEMOTO/Socket6-0.29.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/U/UM/UMEMOTO/Socket6-0.29.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libi/libio-socket-inet6-perl/libio-socket-inet6-perl_2.72-2.debian.tar.xz
@@ -105,5 +105,5 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/Socket6.pm
-/usr/lib/perl5/vendor_perl/5.30.2/x86_64-linux-thread-multi/auto/Socket6/Socket6.so
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/Socket6.pm
+/usr/lib/perl5/vendor_perl/5.30.3/x86_64-linux-thread-multi/auto/Socket6/Socket6.so
